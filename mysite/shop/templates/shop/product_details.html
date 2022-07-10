@@ -1,0 +1,55 @@
+{% extends "shop/base.html" %}
+<!-- static -->
+{% load static %}
+<!-- title -->
+{% block title %} {{ product.title }} {% endblock %}
+<!-- content -->
+{% block content %}
+<div class="container">
+  <h1 style="text-align: center">{{ product.title }}</h1>
+  <div>
+    <div>
+      <img
+        style="width: fit-content; height: 400px"
+        src="/shop{{ product.image.url }}"
+        alt="{{ product.title }}"
+      />
+    </div>
+    <p>{{ product.description }}</p>
+    {% if product.discount_price %}
+    <p>
+      Price:
+      <span style="text-decoration: line-through">{{ product.price }}</span>
+      <span>{{ product.discount_price }}</span>
+    </p>
+    {% else %}
+    <p>Price: {{ product.price }}</p>
+    {% endif %}
+    <ul
+      style="
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+        padding: 0;
+      "
+    >
+      <li>
+        <a
+          href="#"
+          data-product-id="{{ product.id }}"
+          class="btn btn-primary add-to-cart"
+          >В корзину</a
+        >
+      </li>
+      <li>
+        <a
+          href="#"
+          data-product-id-direct="{{ product.id }}"
+          class="btn btn-primary add-to-cart-and-open"
+          >Купить</a
+        >
+      </li>
+    </ul>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,86 @@
+<h2 style="padding: 10px; text-align: center">Корзина</h2>
+{% if cart_products %}
+<!-- sometext -->
+{% for key, value in cart_products.items %}
+<div class="cart-product-overall">
+  <div class="cart-product-img">
+    <img
+      src="/shop{{ value.image }}"
+      class="img-thumbnail"
+      alt="{{ value.title }}"
+    />
+  </div>
+  <div class="cart-product-title">
+    <span class="span-title">товар</span>
+    <a href="{% url 'shop:product_details' key %}" class="cart-product-name"
+      >{{ value.title }}</a
+    >
+  </div>
+  <div class="cart-product-price">
+    <span class="span-title">цена</span>
+    <div>
+      <span>{{ value.price }}</span><span class="span-currency"> грн.</span>
+    </div>
+  </div>
+  <div class="cart-product-quantity">
+    <span class="span-title">кол-во</span>
+    <div class="quantity-box">
+      <span class="quantity-minus" data-id="{{key}}">-</span>
+      <input
+        value="{{ value.product_quantity }}"
+        title="Кол-во"
+        class="quantity-number qty form-control"
+        readonly=""
+        maxlength="3"
+      />
+      <span class="quantity-plus" data-id="{{key}}">+</span>
+    </div>
+  </div>
+  <div class="cart-product-cost">
+    <span class="span-title">сумма</span>
+    <div>
+      <span class="product-cost">{{ value.cost}}</span>
+      <span class="span-currency">грн.</span>
+    </div>
+  </div>
+  <div>
+    <p class="delete" data-id="{{ key }}">
+      <span>✖</span>
+    </p>
+  </div>
+</div>
+
+{% endfor %}
+
+<p>
+  Всего товаров: <span class="total-quantity">{{ total_cart_quantity }}</span>
+</p>
+<p>На сумму: {{ total_cart_sum }} грн.</p>
+
+<div class="modal-buttons-cart">
+  <button type="button" class="btn btn-danger" onclick="clearCart(event)">
+    Очистить корзину
+  </button>
+  <button type="button" class="btn btn-secondary start-buy">
+    Продолжить покупки
+  </button>
+  <button type="button" class="btn btn-success btn-next">Оформить заказ</button>
+</div>
+<!-- <div id="js-atavi-extension-install"></div>
+<div
+  id="target_kultivator_ico"
+  data-ico="chrome-extension://ailgcbdikiapkcbglcpfippolmjfljgi/images/ico.png"
+  style="display: none"
+></div> -->
+{% else %}
+<div style="text-align: center">
+  <h3>Пока в корзине ничего нет :(</h3>
+  <button type="button" class="btn btn-secondary start-buy">
+    Начать покупки
+  </button>
+</div>
+
+{% endif %}
+<div class="close-modal-cart">
+  <span>✖</span>
+</div>

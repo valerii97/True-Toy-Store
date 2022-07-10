@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap css -->
+    <link href="{% static 'shop/bootstrap.min.css' %}" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'shop/style.css' %}" />
+    <link
+      rel="shortcut icon"
+      href="{% static 'shop/favicon.ico' %}"
+      type="image/x-icon"
+    />
+    <!-- Jquery UI CSS -->
+    <link rel="stylesheet" href="{% static 'shop/jquery-ui.css' %}" />
+    <title>{% block title %} My Shop {% endblock %}</title>
+  </head>
+  <body>
+    <header class="container mb-2">
+      {% include 'shop/header_main.html' %}
+    </header>
+    <main id="content">{% block content %} {% endblock content %}</main>
+    <footer></footer>
+    <!-- Modal for cart -->
+    <div
+      class="modal fade"
+      id="cartModal"
+      tabindex="-1"
+      aria-labelledby="cartModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-body" id="cart">{% include 'shop/cart.html' %}</div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal for creating order -->
+    <div
+      class="modal fade"
+      id="orderModal"
+      tabindex="-1"
+      aria-labelledby="orderModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-body" id="order">
+            {% include 'shop/order.html' %}
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Bootstrap library -->
+    <script src="{% static 'shop/bootstrap.bundle.min.js' %}"></script>
+    <!-- JQuery library -->
+    <script src="{% static 'shop/jquery-3.3.1.min.js' %}"></script>
+    <!-- JQuery UI library -->
+    <script src="{% static 'shop/jquery-ui.min.js' %}"></script>
+    <script src="{%static 'shop/main.js'%}"></script>
+  </body>
+</html>

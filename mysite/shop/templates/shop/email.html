@@ -1,0 +1,10 @@
+<h2>This is your order</h2>
+{% for item in order_data_list %}
+<div class="container" style="border: solid red 1px">
+  <p>Title: {{ item.title }}</p>
+  <p>Price: {{ item.price }}</p>
+  <p>Quantity: {{ item.quantity }}</p>
+  <p>Total sum: {{ item.cost }}</p>
+</div>
+
+{% endfor %}

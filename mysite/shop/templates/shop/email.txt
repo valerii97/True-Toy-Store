@@ -1,0 +1,8 @@
+This is your order
+{% for item in order_data_list %}
+  Title: {{ item.title }}
+  Price: {{ item.price }}
+  Quantity: {{ item.quantity }}
+  Total sum: {{ item.cost }}
+
+{% endfor %}

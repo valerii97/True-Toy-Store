@@ -1,0 +1,66 @@
+{% load static %}
+<h2 style="text-align: center">{{ category.cat_name }}</h2>
+<div class="container">
+  <div class="row">
+    {% for product in category.product_set.all %}
+    <div class="col mb-3">
+      <div class="card" style="width: 18rem">
+        <div class="card-img">
+          <a href="{% url 'shop:product_details' product.id %}"
+            ><img
+              style="width: fit-content"
+              src="/shop{{ product.image.url }}"
+              class="card-img-top"
+              alt="{{ product.title }}"
+          /></a>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">
+            <a href="{% url 'shop:product_details' product.id %}"
+              >{{ product.title }}</a
+            >
+          </h5>
+          <p class="card-text clampit">{{ product.description }}</p>
+
+          {% if product.discount_price %}
+          <p>
+            Price:
+            <span style="text-decoration: line-through"
+              >{{ product.price }}</span
+            >
+            <span>{{ product.discount_price }}</span>
+          </p>
+          {% else %}
+          <p>Price: {{ product.price }}</p>
+          {% endif %}
+          <ul
+            style="
+              display: flex;
+              justify-content: space-between;
+              list-style: none;
+              padding: 0;
+            "
+          >
+            <li>
+              <a
+                href="#"
+                data-product-id="{{ product.id }}"
+                class="btn btn-primary add-to-cart"
+                >В корзину</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                data-product-id-direct="{{ product.id }}"
+                class="btn btn-primary add-to-cart-and-open"
+                >Купить</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>

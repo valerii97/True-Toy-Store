@@ -1,0 +1,90 @@
+{
+  "success": "True",
+  "data": [
+    {
+      "SiteKey": "837",
+      "Description": "Відділення №24 (до30 кг): вул. Фонтанська дорога, 4а",
+      "DescriptionRu": "Отделение №24 (до 30 кг):ул. Фонтанская дорога,4а",
+      "ShortAddress": "Одеса, Фонтанська дорога,4а",
+      "ShortAddressRu": "Одесса, Фонтанская дорога, 4а",
+      "Phone": "380800500609",
+      "TypeOfWarehouse": "841339c7-591a-42e2-8233-7a0a00f0ed6f",
+      "Ref": "5a39e591-e1c2-11e3-8c4a-0050568002cf",
+      "Number": "24",
+      "CityRef": "db5c88d0-391c-11dd-90d9-001a92567626",
+      "CityDescription": "Одеса",
+      "CityDescriptionRu": "Одесса",
+      "SettlementRef": "e71c2a15-4b33-11e4-ab6d-005056801329",
+      "SettlementDescription": "Одеса",
+      "SettlementAreaDescription": "Одеська область",
+      "SettlementRegionsDescription": "",
+      "SettlementTypeDescription": "місто",
+      "SettlementTypeDescriptionRu": "город",
+      "Longitude": "30.738319000000000",
+      "Latitude": "46.451452000000000",
+      "PostFinance": "1",
+      "BicycleParking": "1",
+      "PaymentAccess": "1",
+      "POSTerminal": "1",
+      "InternationalShipping": "1",
+      "SelfServiceWorkplacesCount": "1",
+      "TotalMaxWeightAllowed": "30",
+      "PlaceMaxWeightAllowed": "0",
+      "SendingLimitationsOnDimensions": {
+        "Width": 120,
+        "Height": 120,
+        "Length": 120
+      },
+      "ReceivingLimitationsOnDimensions": {
+        "Width": 120,
+        "Height": 120,
+        "Length": 120
+      },
+      "Reception": {
+        "Monday": "09:00-20:00",
+        "Tuesday": "09:00-20:00",
+        "Wednesday": "09:00-20:00",
+        "Thursday": "09:00-20:00",
+        "Friday": "09:00-20:00",
+        "Saturday": "09:00-18:00",
+        "Sunday": "11:00-18:00"
+      },
+      "Delivery": {
+        "Monday": "09:00-17:00",
+        "Tuesday": "09:00-17:00",
+        "Wednesday": "09:00-17:00",
+        "Thursday": "09:00-17:00",
+        "Friday": "09:00-17:00",
+        "Saturday": "09:00-16:30",
+        "Sunday": "11:00-15:00"
+      },
+      "Schedule": {
+        "Monday": "08:00-21:00",
+        "Tuesday": "08:00-21:00",
+        "Wednesday": "08:00-21:00",
+        "Thursday": "09:00-18:00",
+        "Friday": "09:00-18:00",
+        "Saturday": "09:00-18:00",
+        "Sunday": "10:00-18:00"
+      },
+      "DistrictCode": "СКЛ24",
+      "WarehouseStatus": "Working",
+      "WarehouseStatusDate": "2012-06-25 00:00:00",
+      "CategoryOfWarehouse": "Branch",
+      "Direct": "",
+      "RegionCity": "ОДЕСА ПОСИЛКОВИЙ",
+      "WarehouseForAgent": "0",
+      "MaxDeclaredCost": "0",
+      "WorkInMobileAwis": "0"
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "info": {
+    "totalCount": 1
+  },
+  "messageCodes": [],
+  "errorCodes": [],
+  "warningCodes": [],
+  "infoCodes": []
+}

@@ -1,0 +1,292 @@
+body {
+  background-color: rgba(219, 157, 42, 0.822);
+}
+/* styles for product cards */
+.card-title {
+  text-align: center;
+}
+
+.card a img {
+  height: 200px;
+}
+
+.card-img {
+  text-align: center;
+}
+
+.clampit {
+  height: 100px;
+  overflow: hidden;
+}
+.col {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* styles for navbar */
+.search-form {
+  width: fit-content;
+}
+.navbar-brand {
+  position: absolute;
+  top: 5px;
+  left: 35px;
+}
+.navbar-collapse {
+  flex-direction: column;
+}
+.down-menu {
+  display: flex;
+  justify-content: space-evenly;
+  width: -webkit-fill-available;
+}
+.top-menu {
+  display: flex;
+  justify-content: end;
+  width: -webkit-fill-available;
+}
+
+.navbar-toggler {
+  position: relative;
+}
+
+.order-section {
+  display: flex;
+  flex-direction: column;
+}
+.order-section div {
+  margin: 1rem;
+}
+.order-input {
+  width: auto;
+}
+
+/* for autocomplete to be shown in modal window */
+.ui-autocomplete {
+  position: absolute;
+  cursor: default;
+  z-index: 10001 !important;
+}
+
+/* styling buttons in cart */
+.modal-buttons-cart {
+  display: flex;
+  padding: 15px;
+  justify-content: space-around;
+}
+
+.cart-product-overall {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  font-size: 1.5rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  border: 2px grey solid;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.cart-product-overall div {
+  flex: 1 1 auto;
+  margin: 1rem 0.5rem 1rem 0.5rem;
+  text-align: center;
+}
+.span-title {
+  color: grey;
+}
+.cart-product-name {
+  display: block;
+}
+.img-thumbnail {
+  height: 200px;
+}
+.quantity-minus,
+.quantity-plus {
+  background: orangered;
+  padding: 0.5rem;
+  color: white;
+  font-size: 1rem;
+  border: 1px grey solid;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.quantity-minus {
+  padding: 0.5rem 0.6rem 0.5rem 0.7rem;
+}
+.quantity-number {
+  width: 6ch;
+  display: inline;
+  text-align: center;
+}
+.cart-product-title {
+  max-width: 200px;
+}
+.delete {
+  text-align: center;
+  cursor: pointer;
+  vertical-align: middle;
+  color: red;
+  position: relative;
+  top: 3.5rem;
+}
+.close-modal-order {
+  margin: 0;
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  cursor: pointer;
+}
+.close-modal-cart {
+  position: absolute;
+  top: 2rem;
+  right: 1.5rem;
+  cursor: pointer;
+}
+.delivery-details {
+  display: none;
+}
+
+/* .visible {
+  display: block;
+}
+.delivery-method-details-1 {
+  display: none;
+}
+.delivery-method-details-2 {
+  display: none;
+}
+.delivery-method-details-3 {
+  display: none;
+} */
+.ordered-products {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.ordered-product {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 1.5rem;
+}
+#ordered-product-change {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 5px;
+  cursor: pointer;
+  color: orange;
+  background: rgba(223, 215, 215, 0.705);
+  border-radius: 8px;
+  margin: 2px;
+}
+.ordered-prod-img {
+  width: 150px;
+}
+/* media queries should be last in file */
+@media (max-width: 1200px) {
+  .cart-product-overall {
+    font-size: 1rem;
+  }
+  .cart-product-title {
+    max-width: 100px;
+  }
+  .delete {
+    top: 2.5rem;
+  }
+  .ordered-product {
+    width: 100%;
+  }
+}
+@media (max-width: 992px) {
+  .navbar-toggler {
+    left: 90%;
+  }
+  .insta-link {
+    flex-direction: row;
+  }
+  .insta-link li {
+    padding: 0 1rem 0 1rem;
+  }
+  .top-menu {
+    justify-content: space-between;
+  }
+  .order-section {
+    flex-direction: column;
+  }
+  .order-input {
+    display: block;
+    width: 100%;
+  }
+  .modal-buttons-cart {
+    flex-direction: column;
+    padding: 0;
+  }
+  .modal-buttons-cart button {
+    margin: 0.1rem 0 0.1rem 0;
+  }
+  .cart-product-img {
+    width: 30%;
+  }
+  .cart-product-title {
+    max-width: initial;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .span-title {
+    display: none;
+  }
+  .delete {
+    top: 1rem;
+  }
+  .ordered-prod-img {
+    width: 90px;
+  }
+  .order-section div {
+    margin: 0.5rem;
+  }
+}
+@media (max-width: 430px) {
+  .navbar-toggler {
+    left: 80%;
+  }
+  .phone {
+    margin: auto;
+  }
+  .top-menu {
+    flex-direction: column;
+    margin: auto;
+  }
+  .insta-link {
+    flex-direction: column;
+    margin: auto;
+  }
+  .down-menu {
+    flex-direction: column;
+  }
+  .btn-cart-modal-open,
+  .categories,
+  .search-form {
+    margin: auto;
+  }
+  .modal-buttons-cart {
+    flex-direction: column;
+    padding: 0;
+  }
+  .cart-product-overall {
+    font-size: 1rem;
+  }
+  .cart-product-img {
+    width: 100%;
+  }
+  .cart-product-title {
+    width: 100%;
+  }
+  .close-modal-order {
+    top: 1.2rem;
+    right: 0.5rem;
+  }
+}

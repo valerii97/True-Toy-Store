@@ -1,0 +1,99 @@
+{% load shop_extras %}
+<h2 style="text-align: center">Оформление заказа</h2>
+<form action="/shop/create-order/" method="POST" id="order-form">
+  {% csrf_token %}
+  <section class="order-section">
+    <div class="client-data-and-ordered-products">
+      <div id="client-data-div-id">
+        <h3>Ваши данные</h3>
+        <hr />
+        <div
+          style="display: flex; justify-content: space-around; flex-wrap: wrap"
+        >
+          <!-- form for ordering -->
+          {% for field in order_form %}
+          <p>
+            <label class="form-label" for="{{ field.auto_id }}"
+              >{{ field.label }}</label
+            >
+            {{ field }}
+          </p>
+          {% endfor %}
+        </div>
+      </div>
+      <div>
+        <h3>Заказанные продукты</h3>
+        <hr />
+        <div class="ordered-products">
+          {% for key, value in ordered_products.items %}
+          <div class="ordered-product">
+            <a href="{% url 'shop:product_details' key %}"
+              ><img
+                src="/shop{{ value.image }}"
+                class="ordered-prod-img"
+                alt="{{ value.title }}"
+            /></a>
+            <div style="display: flex; flex-direction: column">
+              <h5>
+                <a href="{% url 'shop:product_details' key %}"
+                  >{{ value.title }}</a
+                >
+              </h5>
+              <p>Quantity: {{ value.product_quantity }}</p>
+              <p>Price: {{ value.price }}</p>
+              <p>Cost: {{ value.cost }}</p>
+            </div>
+            <span id="ordered-product-change">Редактировать</span>
+          </div>
+
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-rows: 1fr min-content min-content">
+      <div class="delivery-div">
+        <h3>Доставка</h3>
+        <hr />
+        <ul class="nav nav-tabs">
+          {% for service in del_services %}
+          <li class="nav-item">
+            <a class="nav-link" data-slug="{{service.slug}}" href="#"
+              >{{ service.name }}</a
+            >
+          </li>
+          {% endfor %}
+        </ul>
+        <div class="tab-content" id="choose-delivery"></div>
+      </div>
+      <div>
+        <h3>Оплата</h3>
+        <hr />
+        {% for method in pay_methods %}
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="payment_method"
+            value="{{method.name}}"
+            id="{{method.slug}}"
+            checked
+          />
+          <label class="form-check-label" for="{{method.slug}}">
+            {{ method.name }}
+          </label>
+        </div>
+        {% endfor %}
+      </div>
+      <input
+        type="submit"
+        style="width: min-content; margin: auto"
+        class="btn btn-success"
+        value="Оформить заказ"
+      />
+      <div class="close-modal-order" style="margin: 0">
+        <span>✖</span>
+      </div>
+    </div>
+  </section>
+</form>

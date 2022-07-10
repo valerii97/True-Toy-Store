@@ -1,0 +1,68 @@
+{% load shop_extras %}
+<p>
+  <label class="form-label" for="{{ delivery_form.city.auto_id }}"
+    >{{ delivery_form.city.label }}</label
+  >{{ delivery_form.city }}
+</p>
+<input type="hidden" name="delivery_service" value="{{service.name}}" />
+<!-- ADJUSTING DELIVERY METHODS  -->
+{% if service.del_methods.first.to_post_office %}
+<div class="form-check">
+  <input
+    class="form-check-input"
+    type="radio"
+    name="delivery-method-radio-{{service.slug}}"
+    id="del-to-office-{{service.slug}}"
+    data-service-id="{{ service.slug }}"
+    checked
+  />
+  <label class="form-check-label" for="del-to-office-{{service.slug}}">
+    {% verbose_name service.del_methods.first 'to_post_office' %}
+  </label>
+  <div
+    class="delivery-method-details-{{service.slug}}"
+    data-delivery-method-id="del-to-office-{{service.slug}}"
+    style="display: block"
+  >
+    <p>
+      <label class="form-label" for="{{ delivery_form.post_office.auto_id }}"
+        >{{ delivery_form.post_office.label }}</label
+      >{{ delivery_form.post_office }}
+    </p>
+  </div>
+</div>
+{% endif %}
+<!-- ksdjfdk -->
+{% if service.del_methods.first.by_courier %}
+
+<div class="form-check">
+  <input
+    class="form-check-input"
+    type="radio"
+    name="delivery-method-radio-{{service.slug}}"
+    id="del-by-courier-{{service.slug}}"
+    data-service-id="{{ service.slug }}"
+  />
+  <label class="form-check-label" for="del-by-courier-{{service.slug}}">
+    {% verbose_name service.del_methods.first 'by_courier' %}
+  </label>
+  <div
+    class="delivery-method-details-{{service.slug}}"
+    data-delivery-method-id="del-by-courier-{{service.slug}}"
+    style="display: none"
+  >
+    {% for field in delivery_form %}
+    <!-- dfd -->
+    {% if field != delivery_form.city and field != delivery_form.post_office %}
+    <p>
+      <label class="form-label" for="{{ field.auto_id }}"
+        >{{ field.label }}</label
+      >
+      {{ field }}
+    </p>
+    {% endif %}
+    <!-- dfdasf -->
+    {% endfor %}
+  </div>
+</div>
+{% endif %}
